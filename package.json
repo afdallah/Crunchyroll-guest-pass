@@ -1,6 +1,19 @@
 {
   "dependencies": {
     "axios": "^0.18.0",
+    "@babel/polyfill": "^7.4.4",
     "cheerio": "^1.0.0-rc.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.js",
+    "build": "webpack -p --config webpack.config.js"
   }
 }
