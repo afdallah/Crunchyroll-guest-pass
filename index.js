@@ -1,4 +1,4 @@
-const API_URL = 'https://www.reddit.com/r/anime/comments/af4unw/crunchyroll_guest_pass_thread.json?limit=500&&jsonp'
+const API_URL = 'https://www.reddit.com/r/anime/comments/af4unw/crunchyroll_guest_pass_thread.json?limit=50&&jsonp'
 /**
  *
  * @todos :
