@@ -156,8 +156,7 @@ a {
   }
 }
 
-
 #spinner.loaded {
-  animation: loaded .3s linear alternate;
+  animation: loaded 1s ease-in alternate;
   animation-fill-mode: forwards;
 }
