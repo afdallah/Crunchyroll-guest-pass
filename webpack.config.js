@@ -18,7 +18,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname),
-    compress: true,
+    // compress: true,
     open: 'Opera'
   }
 };
