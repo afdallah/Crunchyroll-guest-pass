@@ -18,6 +18,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname),
-    open: 'Opera'
+    open: true,
+    writeToDisk: true
   }
 };
