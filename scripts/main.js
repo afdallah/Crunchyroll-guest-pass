@@ -1,4 +1,4 @@
-const API_BASE = 'https://www.reddit.com'
+const API_BASE = 'https://www.reddit.com/'
 const API_URL = `${API_BASE}r/anime/comments/af4unw/crunchyroll_guest_pass_thread.json?limit=50&&jsonp`
 /**
  *
@@ -44,14 +44,14 @@ const renderPass = async function (callback) {
   const app = document.querySelector('#app')
 
   data[1].forEach((obj, index) => {
+    console.log(obj.permalink)
     const wrapper = document.createElement('div')
     wrapper.className = 'guess-pass'
     wrapper.innerHTML = `
       <input type="text" class="pass" id="${obj.pass + index}"
         value="${obj.pass}" />
-
       <div class="author">
-        by <a href="${obj.permalink}">${obj.author}</a>
+        by <a href="http://reddit.com/${obj.permalink}">${obj.author}</a>
       </div>
       <div class="posted">
         Posted on ${moment(obj.posted*1000).startOf('hour').fromNow()}
