@@ -1,5 +1,5 @@
-const API_BASE = 'https://www.reddit.com/'
-const API_URL = `${API_BASE}r/anime/comments/af4unw/crunchyroll_guest_pass_thread.json?limit=50&&jsonp`
+const API_BASE = 'https://www.reddit.com'
+const API_URL = `${API_BASE}/r/anime/comments/af4unw/crunchyroll_guest_pass_thread.json?limit=50&&jsonp`
 /**
  *
  * @todos :
