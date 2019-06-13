@@ -65,6 +65,7 @@ h3:after {
   border-radius: 1em;
   box-shadow: 0 5px 21px rgba(0, 0, 0, .1);
   transition: all .3s ease;
+  transform: translateZ(0); /* Fix overflow: hidden, scale() bug */
 }
 
 .guess-pass:hover {
