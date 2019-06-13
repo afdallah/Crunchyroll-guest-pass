@@ -24,11 +24,12 @@ const getGuestPass = async function () {
   return data.map(group => {
     const passList = []
     group.data.children.map(child => {
+      const hasReplies = child.data.hasOwnProperty('replies') ? child.data.replies : 'none'
       const { body_html, author, permalink, score, created_utc: posted } = child.data
       if (!child.data.body_html) return
 
       const passArr = child.data.body_html.match(/[A-Z0-9]{6,}/g)
-      passArr && passArr.forEach(pass => passList.push({ author, permalink, pass, posted }))
+      passArr && passArr.forEach(pass => passList.push({ author, permalink, pass, posted, hasReplies }))
     })
 
     return passList
@@ -44,7 +45,7 @@ const renderPass = async function (callback) {
   const app = document.querySelector('#app')
 
   data[1].forEach((obj, index) => {
-    console.log(obj.permalink)
+    console.log(obj.hasReplies)
     const wrapper = document.createElement('div')
     wrapper.className = 'guess-pass'
     wrapper.innerHTML = `
@@ -56,6 +57,7 @@ const renderPass = async function (callback) {
       <div class="posted">
         Posted on ${moment(obj.posted*1000).startOf('hour').fromNow()}
       </div>
+      ${obj.hasReplies.data.children.length > 0 ? '<span class="status used">Used</span>' : '<span class="status fresh">fresh</span>'}
     `
     app.appendChild(wrapper)
   })

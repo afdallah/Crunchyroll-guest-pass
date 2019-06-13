@@ -8,3 +8,4 @@ Project iseng, karena mendadak jadi wibu. Scrape guest pass (coupon trial gratis
  *  [ ] 2. Button untuk refetch biar ngga usah reload
  *  [ ] 3. Add backend? mungkin?
  *  [ ] 4. Ketimbang copy paste code, tambah button/link ke https://www.crunchyroll.com/coupon_redeem?code=GUESTPASSCODE
+ *  [x] 5. Deteksi apakah guestpass sudah terpakai atau belum
