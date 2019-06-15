@@ -21,9 +21,9 @@ const getPost = async function (url) {
 const getGuestPass = async function () {
   const data = await getPost(API_URL)
 
-  return data.map(group => {
+  return data.map(listing => {
     const passList = []
-    group.data.children.map(child => {
+    listing.data.children.map(child => {
       const hasReplies = child.data.hasOwnProperty('replies') ? child.data.replies : 'none'
       const { body_html, author, permalink, score, created_utc: posted } = child.data
       if (!child.data.body_html) return
@@ -45,7 +45,7 @@ const renderPass = async function (callback) {
   const app = document.querySelector('#app')
 
   data[1].forEach((obj, index) => {
-    console.log(obj.hasReplies)
+    console.log(obj.hasReplies ? obj.hasReplies : 'ngga ada')
     const wrapper = document.createElement('div')
     wrapper.className = 'guess-pass'
     wrapper.innerHTML = `
@@ -57,7 +57,7 @@ const renderPass = async function (callback) {
       <div class="posted">
         Posted on ${moment(obj.posted*1000).startOf('hour').fromNow()}
       </div>
-      ${obj.hasReplies.data.children.length > 0 ? '<span class="status used">Used</span>' : '<span class="status fresh">fresh</span>'}
+      ${obj.hasReplies ? '<span class="status used">Used</span>' : '<span class="status fresh">fresh</span>'}
     `
     app.appendChild(wrapper)
   })
