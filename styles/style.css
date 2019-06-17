@@ -198,6 +198,7 @@ h3:after {
   }
 
   100% {
+    clip: rect(0,0,0,0);
     display: none;
     opacity: 0;
     width: 0px;
